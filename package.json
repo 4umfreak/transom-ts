@@ -21,7 +21,10 @@
   },
   "devDependencies": {
     "@types/node": "^10.12.19",
+    "@types/restify": "^7.2.7",
+    "@types/restify-cors-middleware": "^1.0.1",
     "concurrently": "^4.1.0",
+    "dts-gen": "^0.5.7",
     "nodemon": "^1.18.9",
     "opn": "^5.4.0",
     "prettier": "^1.16.2",
