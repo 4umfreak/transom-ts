@@ -4,18 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "tsc"
+    "tsc": "tsc -p .",
+    "build-ts": "tsc",
+    "start": "npm run serve",
+    "serve": "node dist/index.js",
+    "watch-node": "nodemon dist/index.js",
+    "watch-ts": "tsc -p . -w",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@transomjs/transom-core": "^1.2.1",
-    "@transomjs/transom-server-functions": "^1.0.6",
-    "typescript": "^3.2.4"
+    "@transomjs/transom-server-functions": "^1.0.6"
   },
   "devDependencies": {
-    "opn": "^5.4.0"
+    "@types/node": "^10.12.19",
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.9",
+    "opn": "^5.4.0",
+    "prettier": "^1.16.2",
+    "tslint": "^5.12.1",
+    "typescript": "^3.2.4"
   }
 }

@@ -6,8 +6,8 @@ module.exports = {
         functions: {
           hello:{
             methods: ["GET"],
-            "function": function(server, req, res, next) {
-              res.send("hello world");
+            "function": function(server: any, req: any, res: any, next: any) {
+              res.send("hello world!");
               next();
             }
           }
