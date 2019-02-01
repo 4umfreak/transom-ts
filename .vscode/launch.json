@@ -7,7 +7,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "Debug Transom",
             "preLaunchTask": "npm: build",
             "program": "${workspaceFolder}/src/index.ts",
             "outFiles": [ "${workspaceRoot}/dist/**/*.js" ]
