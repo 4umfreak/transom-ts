@@ -6,10 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc -p .",
-    "start": "npm run build && npm run watch-node",
-    "watch-node": "nodemon dist/index.js",
+    "start-once": "npm run build && npm run watch-node",
+    "watch-node": "nodemon --delay 2 dist/index.js",
     "watch-ts": "tsc -p . -w",
-    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\""
+    "start": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\""
   },
   "author": "",
   "license": "ISC",
