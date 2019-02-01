@@ -1,33 +1,20 @@
-require('dotenv').config();
-
+// const Transom = require('@transomjs/transom-core');
 const transomServerFx = require('@transomjs/transom-server-functions');
 const myApi = require('./myApi');
+const opn = require('opn');
 
-const x = require('@transomjs/transom-core');
-
-import TransomCore from '@transomjs/transom-core';
+import TransomCore from '@transomjs/transom-core'; // @transomjs/transom-core
 
 // const reg: PocketRegistry = 
 import PocketRegistry from 'pocket-registry';
 
 const reg: PocketRegistry = new PocketRegistry();
 
-reg.register = {
-  yellow: '#005599'
-};
-
-
-console.log(`Register includes yellow: ${reg.get('yellow', 'nil')}`);
-
-const keys : Array<keyof String> = reg.keys;
-
-console.log(`Register includes keys: ${keys.join(', ')}`);
-
+// reg.remove()
 const transom = new TransomCore();
 transom.configure(transomServerFx);
 
-// transom.configure(transomServerFx, {})
-// const foo = transom.registry;
+const foo = transom.registry;
 
 // Initialize my TransomJS API metadata.
 transom.initialize(myApi).then(function(server: any) {
